@@ -105,6 +105,32 @@ const HomePage = () => {
             </div>
         </section>
     );
+    
+    const OurMission = () => (
+        <section id="mission" className="bg-white py-20">
+            <div className="container mx-auto px-6 flex flex-col md:flex-row-reverse items-center gap-12">
+                <div className="md:w-1/2">
+                    <img src="https://imgs.search.brave.com/xlT4tMB4zNUmNX2WJ_BrdYTfkaNcB-CnoHNCqGZP4Nk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vYXJ0dXJzei9h/cnR1cnN6MTgwNC9h/cnR1cnN6MTgwNDAx/MTgyLzk5MDg2MDk0/LXdvcmQtd3JpdGlu/Zy10ZXh0LW91ci1t/aXNzaW9uLWJ1c2lu/ZXNzLWNvbmNlcHQt/Zm9yLWdvYWwtbW90/aXZhdGlvbi10YXJn/ZXQtZ3Jvd3RoLXBs/YW5uaW5nLmpwZz92/ZXI9Ng" alt="Our Mission" className="rounded-lg shadow-xl w-full h-auto" />
+                </div>
+                <div className="md:w-1/2 text-center md:text-left">
+                    <h2 className="text-4xl font-bold text-gray-800 mb-4">Hamara Mission</h2>
+                    <p className="text-gray-600 mb-6 text-lg">
+                        ExpertConnect ka mission logon ko unke kaam ke liye sabse behtar aur trusted professionals se jodna hai. Hum transparency, quality, aur suvidha par vishwas rakhte hain, taki aapko hamesha best service mile aur aap apne goals aasani se achieve kar sakein.
+                    </p>
+                     <div className="flex justify-center md:justify-start space-x-8">
+                        <div>
+                            <p className="text-3xl font-bold text-blue-600">1000+</p>
+                            <p className="text-gray-500">Verified Experts</p>
+                        </div>
+                        <div>
+                            <p className="text-3xl font-bold text-blue-600">50,000+</p>
+                            <p className="text-gray-500">Consultations Done</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 
     const ExpertCard = ({ icon, title, description }) => (
         <Link to={`/experts/${encodeURIComponent(title)}`} className="block bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center h-full cursor-pointer">
@@ -124,7 +150,7 @@ const HomePage = () => {
             { icon: <Heart className="w-12 h-12" />, title: "Health & Wellness", description: "Nutritionists, yoga teachers, aur fitness coaches se salah lekar swasth rahein." }
         ];
         return (
-            <section id="experts" className="bg-white py-20">
+            <section id="experts" className="bg-gray-50 py-20">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-800">Expert Categories</h2>
@@ -141,6 +167,7 @@ const HomePage = () => {
     return (
         <>
             <Hero />
+            <OurMission />
             <ExpertCategories />
         </>
     );
