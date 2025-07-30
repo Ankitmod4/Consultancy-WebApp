@@ -16,24 +16,25 @@ const Video = (props) => (<svg xmlns="http://www.w3.org/2000/svg" width="24" hei
 const Code = (props) => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>);
 const Heart = (props) => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>);
 const FilterIcon = (props) => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>);
+const SearchIcon = (props) => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>);
 
 
 // --- Mock Data for Experts (Updated with Skills) ---
 const allExperts = [
-    { id: 1, name: "Suresh Gupta", category: "Accountants & CAs", specialty: "Tax Consultant", experience: 12, rating: 4.8, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=SG", bio: "Suresh Gupta is an experienced tax consultant who helps startups and small businesses with their tax planning and compliance.", languages: ["Hindi", "English"], fee: 1500, skills: ["Income Tax", "GST Filing", "TDS", "Audit"], reviews: [{name: "Rohan S.", comment: "Excellent service and deep knowledge of tax laws. Highly recommended."}] },
-    { id: 2, name: "Meena Verma", category: "Accountants & CAs", specialty: "Corporate Finance", experience: 15, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=MV", bio: "With 15 years of experience in corporate finance, Meena optimizes your business's financial structure for sustainable growth.", languages: ["English", "Marathi"], fee: 2500, skills: ["Financial Modeling", "Valuation", "Fundraising", "Mergers & Acquisitions"], reviews: [{name: "Priya K.", comment: "Meena's advice was crucial for our company's growth. A true professional."}] },
-    { id: 3, name: "Rajesh Kumar", category: "Accountants & CAs", specialty: "GST Expert", experience: 8, rating: 4.7, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=RK", bio: "Rajesh Kumar is a specialist in GST registration and filing, ensuring your business stays compliant with all regulations.", languages: ["Hindi"], fee: 1200, skills: ["GST Registration", "GST Returns", "E-Way Bill", "Input Tax Credit"], reviews: [{name: "Amit P.", comment: "Made the whole GST process very simple for us."}] },
-    { id: 4, name: "Pandit Ravi Joshi", category: "Astrologers", specialty: "Vedic Astrology", experience: 20, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=RJ", bio: "A master of Vedic astrology, Pandit Ravi Joshi provides guidance on career, marriage, and other important life decisions.", languages: ["Hindi", "Sanskrit"], fee: 2000, skills: ["Horoscope Reading", "Kundli Matching", "Vastu Shastra", "Numerology"], reviews: [{name: "Sunita V.", comment: "His predictions are incredibly accurate. Provided great clarity."}] },
-    { id: 5, name: "Anjali Sharma", category: "Astrologers", specialty: "Tarot Card Reader", experience: 10, rating: 4.8, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=AS", bio: "Anjali Sharma is a renowned Tarot Card reader who offers deep insights into your present and future.", languages: ["Hindi", "English"], fee: 1800, skills: ["Tarot Reading", "Angel Reading", "Crystal Healing"], reviews: [{name: "Vikram R.", comment: "A very insightful and comforting session."}] },
-    { id: 6, name: "Advocate Alok Singh", category: "Legal Advisors", specialty: "Corporate Law", experience: 18, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=AS", bio: "Advocate Alok Singh is a well-known name in corporate law, specializing in legal contracts and compliance.", languages: ["English"], fee: 3000, skills: ["Contract Drafting", "Legal Compliance", "Intellectual Property", "Corporate Governance"], reviews: [{name: "TechCorp", comment: "Alok is our go-to legal advisor for all corporate matters."}] },
-    { id: 7, name: "Priya Desai", category: "Legal Advisors", specialty: "Family Law", experience: 12, rating: 4.7, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=PD", bio: "Priya Desai is a family law attorney whose experience can be instrumental in navigating sensitive family matters.", languages: ["Hindi", "Gujarati"], fee: 2200, skills: ["Divorce Law", "Child Custody", "Alimony", "Property Disputes"], reviews: [{name: "Anonymous", comment: "Handled my case with utmost professionalism and empathy."}] },
-    { id: 8, name: "Amit Khanna", category: "Business Consultants", specialty: "Startup Growth", experience: 14, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=AK", bio: "Amit Khanna helps startups build their growth strategy, from marketing and sales to securing funding.", languages: ["Hindi", "English"], fee: 3500, skills: ["Business Plan", "Market Research", "Growth Hacking", "Pitch Deck"], reviews: [{name: "Innovate Inc.", comment: "Amit's strategies were a game-changer for our startup."}] },
-    { id: 9, name: "Sunita Menon", category: "Business Consultants", specialty: "Marketing Strategy", experience: 16, rating: 4.8, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=SM", bio: "Sunita Menon is a marketing guru who provides innovative ideas to establish your brand in the market.", languages: ["English", "Tamil"], fee: 4000, skills: ["Digital Marketing", "Branding", "SEO", "Social Media Marketing"], reviews: [{name: "Brandify", comment: "Our marketing ROI has doubled since we hired Sunita."}] },
-    { id: 10, name: "Vikram Rathore", category: "Business Consultants", specialty: "Operations Management", experience: 19, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=VR", bio: "Vikram Rathore specializes in streamlining business operations, which increases your company's efficiency.", languages: ["Hindi", "English"], fee: 4500, skills: ["Supply Chain", "Logistics", "Process Improvement", "Quality Control"], reviews: [{name: "Logistics Pro", comment: "Vikram optimized our supply chain and saved us a fortune."}] },
-    { id: 11, name: "Arjun Mehta", category: "Software & IT Consultants", specialty: "Cloud Solutions Architect", experience: 11, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=AM", bio: "Arjun Mehta is an expert in AWS and Azure cloud platforms and helps businesses migrate to the cloud seamlessly.", languages: ["English"], fee: 5000, skills: ["AWS", "Azure", "DevOps", "Microservices"], reviews: [{name: "DataSafe", comment: "Arjun's expertise in cloud architecture is unmatched."}] },
-    { id: 12, name: "Sneha Reddy", category: "Software & IT Consultants", specialty: "Cybersecurity Expert", experience: 9, rating: 4.8, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=SR", bio: "Sneha Reddy protects your digital assets from online threats with state-of-the-art cybersecurity measures.", languages: ["English", "Telugu"], fee: 4800, skills: ["Network Security", "Ethical Hacking", "Data Protection", "Vulnerability Assessment"], reviews: [{name: "SecureNet", comment: "We feel much safer after Sneha's audit and recommendations."}] },
-    { id: 13, name: "Dr. Riya Sharma", category: "Health & Wellness", specialty: "Nutritionist", experience: 10, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=RS", bio: "Dr. Riya Sharma provides personalized guidance for a balanced diet and a healthy lifestyle.", languages: ["Hindi", "English"], fee: 1000, skills: ["Diet Planning", "Weight Management", "Sports Nutrition", "Clinical Nutrition"], reviews: [{name: "Aarav J.", comment: "Lost 10kgs in 3 months thanks to her diet plan!"}] },
-    { id: 14, name: "Yogacharya Sameer", category: "Health & Wellness", specialty: "Yoga & Meditation", experience: 15, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=YS", bio: "Yogacharya Sameer teaches yoga and meditation to reduce stress and achieve mental peace.", languages: ["Hindi", "English", "Sanskrit"], fee: 800, skills: ["Hatha Yoga", "Vinyasa", "Pranayama", "Mindfulness"], reviews: [{name: "Shanti M.", comment: "His classes are a perfect start to the day. So calming."}] },
+    { id: 1, name: "Suresh Gupta", category: "Accountants & CAs", specialty: "Tax Consultant", experience: 12, rating: 4.8, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=SG", bio: "Suresh Gupta is an experienced tax consultant who helps startups and small businesses with their tax planning and compliance.", languages: ["Hindi", "English"], fee: 1500, skills: ["Income Tax", "GST Filing", "TDS", "Audit"], qualifications: ["Chartered Accountant (ICAI)", "B.Com (Hons)"], reviews: [{name: "Rohan S.", comment: "Excellent service and deep knowledge of tax laws. Highly recommended."}] },
+    { id: 2, name: "Meena Verma", category: "Accountants & CAs", specialty: "Corporate Finance", experience: 15, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=MV", bio: "With 15 years of experience in corporate finance, Meena optimizes your business's financial structure for sustainable growth.", languages: ["English", "Marathi"], fee: 2500, skills: ["Financial Modeling", "Valuation", "Fundraising", "Mergers & Acquisitions"], qualifications: ["Chartered Accountant (ICAI)", "MBA in Finance"], reviews: [{name: "Priya K.", comment: "Meena's advice was crucial for our company's growth. A true professional."}] },
+    { id: 3, name: "Rajesh Kumar", category: "Accountants & CAs", specialty: "GST Expert", experience: 8, rating: 4.7, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=RK", bio: "Rajesh Kumar is a specialist in GST registration and filing, ensuring your business stays compliant with all regulations.", languages: ["Hindi"], fee: 1200, skills: ["GST Registration", "GST Returns", "E-Way Bill", "Input Tax Credit"], qualifications: ["Chartered Accountant (ICAI)", "Certified GST Practitioner"], reviews: [{name: "Amit P.", comment: "Made the whole GST process very simple for us."}] },
+    { id: 4, name: "Pandit Ravi Joshi", category: "Astrologers", specialty: "Vedic Astrology", experience: 20, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=RJ", bio: "A master of Vedic astrology, Pandit Ravi Joshi provides guidance on career, marriage, and other important life decisions.", languages: ["Hindi", "Sanskrit"], fee: 2000, skills: ["Horoscope Reading", "Kundli Matching", "Vastu Shastra", "Numerology"], qualifications: ["Jyotish Acharya", "Vastu Ratna"], reviews: [{name: "Sunita V.", comment: "His predictions are incredibly accurate. Provided great clarity."}] },
+    { id: 5, name: "Anjali Sharma", category: "Astrologers", specialty: "Tarot Card Reader", experience: 10, rating: 4.8, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=AS", bio: "Anjali Sharma is a renowned Tarot Card reader who offers deep insights into your present and future.", languages: ["Hindi", "English"], fee: 1800, skills: ["Tarot Reading", "Angel Reading", "Crystal Healing"], qualifications: ["Certified Tarot Master", "Diploma in Angel Healing"], reviews: [{name: "Vikram R.", comment: "A very insightful and comforting session."}] },
+    { id: 6, name: "Advocate Alok Singh", category: "Legal Advisors", specialty: "Corporate Law", experience: 18, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=AS", bio: "Advocate Alok Singh is a well-known name in corporate law, specializing in legal contracts and compliance.", languages: ["English"], fee: 3000, skills: ["Contract Drafting", "Legal Compliance", "Intellectual Property", "Corporate Governance"], qualifications: ["LL.M. in Corporate Law", "LL.B."], reviews: [{name: "TechCorp", comment: "Alok is our go-to legal advisor for all corporate matters."}] },
+    { id: 7, name: "Priya Desai", category: "Legal Advisors", specialty: "Family Law", experience: 12, rating: 4.7, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=PD", bio: "Priya Desai is a family law attorney whose experience can be instrumental in navigating sensitive family matters.", languages: ["Hindi", "Gujarati"], fee: 2200, skills: ["Divorce Law", "Child Custody", "Alimony", "Property Disputes"], qualifications: ["LL.B.", "Post Graduate Diploma in Family Law"], reviews: [{name: "Anonymous", comment: "Handled my case with utmost professionalism and empathy."}] },
+    { id: 8, name: "Amit Khanna", category: "Business Consultants", specialty: "Startup Growth", experience: 14, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=AK", bio: "Amit Khanna helps startups build their growth strategy, from marketing and sales to securing funding.", languages: ["Hindi", "English"], fee: 3500, skills: ["Business Plan", "Market Research", "Growth Hacking", "Pitch Deck"], qualifications: ["MBA from IIM Ahmedabad", "B.Tech in Computer Science"], reviews: [{name: "Innovate Inc.", comment: "Amit's strategies were a game-changer for our startup."}] },
+    { id: 9, name: "Sunita Menon", category: "Business Consultants", specialty: "Marketing Strategy", experience: 16, rating: 4.8, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=SM", bio: "Sunita Menon is a marketing guru who provides innovative ideas to establish your brand in the market.", languages: ["English", "Tamil"], fee: 4000, skills: ["Digital Marketing", "Branding", "SEO", "Social Media Marketing"], qualifications: ["MBA in Marketing", "Certified Digital Marketing Professional (CDMP)"], reviews: [{name: "Brandify", comment: "Our marketing ROI has doubled since we hired Sunita."}] },
+    { id: 10, name: "Vikram Rathore", category: "Business Consultants", specialty: "Operations Management", experience: 19, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=VR", bio: "Vikram Rathore specializes in streamlining business operations, which increases your company's efficiency.", languages: ["Hindi", "English"], fee: 4500, skills: ["Supply Chain", "Logistics", "Process Improvement", "Quality Control"], qualifications: ["M.Sc in Operations Management", "Six Sigma Black Belt"], reviews: [{name: "Logistics Pro", comment: "Vikram optimized our supply chain and saved us a fortune."}] },
+    { id: 11, name: "Arjun Mehta", category: "Software & IT Consultants", specialty: "Cloud Solutions Architect", experience: 11, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=AM", bio: "Arjun Mehta is an expert in AWS and Azure cloud platforms and helps businesses migrate to the cloud seamlessly.", languages: ["English"], fee: 5000, skills: ["AWS", "Azure", "DevOps", "Microservices"], qualifications: ["AWS Certified Solutions Architect – Professional", "Microsoft Certified: Azure Solutions Architect Expert"], reviews: [{name: "DataSafe", comment: "Arjun's expertise in cloud architecture is unmatched."}] },
+    { id: 12, name: "Sneha Reddy", category: "Software & IT Consultants", specialty: "Cybersecurity Expert", experience: 9, rating: 4.8, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=SR", bio: "Sneha Reddy protects your digital assets from online threats with state-of-the-art cybersecurity measures.", languages: ["English", "Telugu"], fee: 4800, skills: ["Network Security", "Ethical Hacking", "Data Protection", "Vulnerability Assessment"], qualifications: ["Certified Ethical Hacker (CEH)", "CISSP - Certified Information Systems Security Professional"], reviews: [{name: "SecureNet", comment: "We feel much safer after Sneha's audit and recommendations."}] },
+    { id: 13, name: "Dr. Riya Sharma", category: "Health & Wellness", specialty: "Nutritionist", experience: 10, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=RS", bio: "Dr. Riya Sharma provides personalized guidance for a balanced diet and a healthy lifestyle.", languages: ["Hindi", "English"], fee: 1000, skills: ["Diet Planning", "Weight Management", "Sports Nutrition", "Clinical Nutrition"], qualifications: ["Ph.D. in Nutrition and Dietetics", "M.Sc. in Food and Nutrition"], reviews: [{name: "Aarav J.", comment: "Lost 10kgs in 3 months thanks to her diet plan!"}] },
+    { id: 14, name: "Yogacharya Sameer", category: "Health & Wellness", specialty: "Yoga & Meditation", experience: 15, rating: 4.9, image: "https://placehold.co/150x150/E2E8F0/4A5568?text=YS", bio: "Yogacharya Sameer teaches yoga and meditation to reduce stress and achieve mental peace.", languages: ["Hindi", "English", "Sanskrit"], fee: 800, skills: ["Hatha Yoga", "Vinyasa", "Pranayama", "Mindfulness"], qualifications: ["Certified Yoga Teacher (500-hour)", "M.A. in Yogic Science"], reviews: [{name: "Shanti M.", comment: "His classes are a perfect start to the day. So calming."}] },
 ];
 
 // ====================================================================
@@ -118,14 +119,14 @@ const HomePage = () => {
                         ExpertConnect's mission is to connect people with the best and most trusted professionals for their needs. We believe in transparency, quality, and convenience, so you always get the best service and can achieve your goals easily.
                     </p>
                      <div className="flex justify-center md:justify-start space-x-8">
-                        <div>
-                            <p className="text-3xl font-bold text-blue-600">1,000+</p>
-                            <p className="text-gray-500">Verified Experts</p>
-                        </div>
-                        <div>
-                            <p className="text-3xl font-bold text-blue-600">50,000+</p>
-                            <p className="text-gray-500">Consultations Done</p>
-                        </div>
+                         <div>
+                             <p className="text-3xl font-bold text-blue-600">1,000+</p>
+                             <p className="text-gray-500">Verified Experts</p>
+                         </div>
+                         <div>
+                             <p className="text-3xl font-bold text-blue-600">50,000+</p>
+                             <p className="text-gray-500">Consultations Done</p>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -228,10 +229,11 @@ const SignupPage = () => (
 );
 
 // ====================================================================
-// --- File: pages/ExpertListPage.js (with Filter Modal) ---
+// --- File: pages/ExpertListPage.js (MODIFIED) ---
 // ====================================================================
 const ExpertListPage = () => {
     const { category } = useParams();
+    const navigate = useNavigate();
     const decodedCategory = decodeURIComponent(category);
     
     const expertsInCategory = useMemo(() => allExperts.filter(expert => expert.category === decodedCategory), [decodedCategory]);
@@ -265,13 +267,13 @@ const ExpertListPage = () => {
     };
     
     const resetFilters = () => {
-        setFilters({
-            searchTerm: '',
+        setFilters(prev => ({
+            ...prev, // Keep searchTerm
             experience: 0,
             rating: 0,
             languages: [],
             maxFee: 5000
-        });
+        }));
     }
 
     const filteredExperts = useMemo(() => expertsInCategory.filter(expert => {
@@ -279,8 +281,8 @@ const ExpertListPage = () => {
             (filters.rating === 0 || expert.rating >= filters.rating) &&
             (expert.experience >= filters.experience) &&
             (expert.fee <= filters.maxFee) &&
-            (expert.name.toLowerCase().includes(filters.searchTerm.toLowerCase())) &&
-            (filters.languages.length === 0 || filters.languages.every(lang => expert.languages.includes(lang)))
+            (expert.name.toLowerCase().includes(filters.searchTerm.toLowerCase()) || expert.specialty.toLowerCase().includes(filters.searchTerm.toLowerCase())) &&
+            (filters.languages.length === 0 || filters.languages.some(lang => expert.languages.includes(lang)))
         );
     }), [expertsInCategory, filters]);
 
@@ -288,6 +290,7 @@ const ExpertListPage = () => {
         <div className="bg-white p-6 rounded-lg shadow-md flex flex-col sm:flex-row items-center gap-6 w-full hover:shadow-xl transition-shadow duration-300">
             <img src={expert.image} alt={expert.name} className="w-24 h-24 rounded-full object-cover border-4 border-gray-200" />
             <div className="text-center sm:text-left flex-grow">
+                
                 <h3 className="text-2xl font-bold text-gray-800">{expert.name}</h3>
                 <p className="text-blue-600 font-semibold">{expert.specialty}</p>
                 <div className="flex items-center justify-center sm:justify-start mt-2 text-sm text-gray-500">
@@ -309,23 +312,19 @@ const ExpertListPage = () => {
     );
     
     const FilterModal = ({ onClose }) => (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-end">
-            <div className={`bg-white p-6 rounded-t-2xl shadow-lg w-full max-w-lg transform transition-transform duration-300 ${isFilterOpen ? 'translate-y-0' : 'translate-y-full'}`}>
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-end sm:items-center">
+             <div className="bg-white p-6 rounded-t-2xl sm:rounded-xl shadow-lg w-full max-w-md transform transition-transform duration-300">
                 <div className="flex justify-between items-center border-b pb-2 mb-4">
                     <h3 className="text-xl font-bold">Filters</h3>
                     <button onClick={onClose} className="text-gray-500 hover:text-gray-800"><X /></button>
                 </div>
                 <div className="space-y-6 max-h-[60vh] overflow-y-auto p-2">
-                    {/* Filter controls go here, same as before */}
-                    <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">Search by Name</label>
-                        <input type="text" name="searchTerm" value={filters.searchTerm} onChange={handleFilterChange} placeholder="Expert's name..." className="w-full p-2 border border-gray-300 rounded-md"/>
-                    </div>
+                    {/* --- Search by name is REMOVED from modal --- */}
                     <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">Rating</label>
                         <div className="flex justify-between">
                             {[1, 2, 3, 4, 5].map(star => (
-                                <button key={star} onClick={() => setFilters(f => ({...f, rating: star}))} className={`p-1 rounded-full ${filters.rating >= star ? 'text-yellow-400' : 'text-gray-300'}`}>
+                                <button key={star} onClick={() => setFilters(f => ({...f, rating: star === f.rating ? 0 : star }))} className={`p-1 rounded-full transition-colors ${filters.rating >= star ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-300'}`}>
                                     <StarIcon className="w-6 h-6"/>
                                 </button>
                             ))}
@@ -362,24 +361,44 @@ const ExpertListPage = () => {
     return (
         <section className="bg-gray-50 py-20 min-h-screen pt-28">
             <div className="container mx-auto px-6">
+                <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-blue-600 font-semibold mb-6 hover:underline">
+                    <ArrowLeft className="w-5 h-5" />
+                    Back to Home
+                </button>
                 <main>
-                    <div className="flex justify-between items-center mb-6">
-                        <div>
-                            <h2 className="text-3xl font-bold text-gray-800">Experts in {decodedCategory}</h2>
-                            <p className="text-gray-600">{filteredExperts.length} experts found</p>
+                     <div className="mb-6">
+                        <h2 className="text-3xl font-bold text-gray-800">Experts in {decodedCategory}</h2>
+                        <p className="text-gray-600">{filteredExperts.length} experts found</p>
+                    </div>
+
+                    {/* --- NEW: Search bar and filter button are separated --- */}
+                    <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                        <div className="relative flex-grow">
+                             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                                <SearchIcon className="w-5 h-5 text-gray-400" />
+                            </span>
+                            <input
+                                type="text"
+                                name="searchTerm"
+                                value={filters.searchTerm}
+                                onChange={handleFilterChange}
+                                placeholder="Search by name or specialty..."
+                                className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
                         </div>
-                        <button onClick={() => setIsFilterOpen(true)} className="flex items-center gap-2 bg-white border border-gray-300 text-gray-800 py-2 px-4 rounded-lg shadow-sm hover:bg-gray-100">
+                        <button onClick={() => setIsFilterOpen(true)} className="flex-shrink-0 flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-800 py-2.5 px-4 rounded-lg shadow-sm hover:bg-gray-100">
                             <FilterIcon className="w-5 h-5" />
                             <span>Filters</span>
                         </button>
                     </div>
+                    
                     <div className="space-y-6">
                         {filteredExperts.length > 0 ? (
                             filteredExperts.map((expert) => <ExpertProfileCard key={expert.id} expert={expert} />)
                         ) : (
                             <div className="text-center py-16 bg-white rounded-lg shadow-md">
                                 <p className="text-xl text-gray-600">No experts match your criteria.</p>
-                                <p className="text-gray-500 mt-2">Try adjusting your filters.</p>
+                                <p className="text-gray-500 mt-2">Try adjusting your search or filters.</p>
                             </div>
                         )}
                     </div>
@@ -389,6 +408,7 @@ const ExpertListPage = () => {
         </section>
     );
 };
+
 
 // ====================================================================
 // --- File: pages/ExpertProfilePage.js (Redesigned) ---
@@ -406,7 +426,8 @@ const ExpertProfilePage = () => {
     const TabButton = ({ tabName, children }) => (
         <button
             onClick={() => setActiveTab(tabName)}
-            className={`px-6 py-3 font-semibold transition-colors duration-300 border-b-2 ${activeTab === tabName ? 'border-blue-600 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
+            // Adjusted padding for mobile
+            className={`whitespace-nowrap px-4 md:px-6 py-3 font-semibold transition-colors duration-300 border-b-2 ${activeTab === tabName ? 'border-blue-600 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-800'}`}
         >
             {children}
         </button>
@@ -420,29 +441,32 @@ const ExpertProfilePage = () => {
                     Back to List
                 </button>
 
-                {/* --- New Profile Card --- */}
+                {/* --- Profile Card --- */}
                 <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
                         {/* Profile Image */}
                         <div className="flex-shrink-0">
-                            <img src={expert.image} alt={expert.name} className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-gray-200 shadow-md" />
+                            <img src={expert.image} alt={expert.name} className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-blue-100 shadow-md" />
                         </div>
 
                         {/* Profile Info */}
                         <div className="flex-grow text-center md:text-left">
                             <h1 className="text-3xl md:text-4xl font-bold text-gray-800">{expert.name}</h1>
                             <p className="text-lg text-blue-600 font-semibold mt-1">{expert.specialty}</p>
-                            <div className="flex items-center justify-center md:justify-start mt-3 space-x-4 text-gray-600">
+                            
+                            {/* Responsive Stats Section */}
+                            <div className="flex flex-wrap items-center justify-center md:justify-start mt-3 gap-x-4 gap-y-1 text-gray-600">
                                 <div className="flex items-center">
                                     <StarIcon className="w-5 h-5 text-yellow-400 mr-1" />
                                     <span className="font-bold">{expert.rating}</span>
                                 </div>
-                                <span>&bull;</span>
+                                <span className="hidden sm:inline">&bull;</span>
                                 <span>{expert.experience} years experience</span>
-                                <span>&bull;</span>
-                                <span>{expert.reviews.length} reviews</span>
+                                <span className="hidden sm:inline">&bull;</span>
+                                <span>{expert.reviews.length} review(s)</span>
                             </div>
-                             <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-2">
+
+                            <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-2">
                                 {expert.languages.map(lang => (
                                     <span key={lang} className="bg-gray-100 text-gray-700 text-xs font-semibold px-2.5 py-1 rounded-full">{lang}</span>
                                 ))}
@@ -471,19 +495,35 @@ const ExpertProfilePage = () => {
                 <div className="mt-8">
                     <div className="bg-white rounded-xl shadow-lg">
                         <div className="border-b border-gray-200">
-                            <nav className="-mb-px flex space-x-6 px-6">
+                            {/* Added overflow-x-auto for scrollable tabs on mobile */}
+                            <nav className="-mb-px flex space-x-2 sm:space-x-6 px-4 sm:px-6 overflow-x-auto">
                                 <TabButton tabName="about">About</TabButton>
+                                {/* NEW: Qualification Tab */}
+                                <TabButton tabName="qualification">Qualification</TabButton>
                                 <TabButton tabName="skills">Skills</TabButton>
                                 <TabButton tabName="reviews">Reviews</TabButton>
                             </nav>
                         </div>
-                        <div className="p-6">
+                        <div className="p-6 md:p-8">
                             {activeTab === 'about' && (
                                 <div>
                                     <h3 className="text-xl font-bold text-gray-800 mb-4">About Me</h3>
                                     <p className="text-gray-600 leading-relaxed whitespace-pre-line">{expert.bio}</p>
                                 </div>
                             )}
+
+                            {/* NEW: Qualification Content Panel */}
+                            {activeTab === 'qualification' && (
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-800 mb-4">Qualifications</h3>
+                                    <ul className="list-disc list-inside space-y-3 text-gray-700">
+                                        {expert.qualifications && expert.qualifications.map((qual, index) => (
+                                            <li key={index} className="pl-2">{qual}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
                             {activeTab === 'skills' && (
                                 <div>
                                     <h3 className="text-xl font-bold text-gray-800 mb-4">Skills</h3>
