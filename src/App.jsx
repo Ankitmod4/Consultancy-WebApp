@@ -13,6 +13,7 @@ import SignupPage from './pages/SignupPage';
 import ExpertListPage from './pages/ExpertListPage';
 import ExpertProfilePage from './pages/ExpertProfilePage';
 import ScrollToTop from './ScrollToTop';
+import ContactForm from './components/ContactForm';
 
 export default function App() {
     return (
@@ -27,6 +28,7 @@ export default function App() {
                         <Route path="/signup" element={<SignupPage />} />
                         <Route path="/experts/:category" element={<ExpertListPage />} />
                         <Route path="/profile/:id" element={<ExpertProfilePage />} />
+                        <Route path="/contact" element={<ContactForm />} />
                     </Routes>
                 </main>
                 <Footer />
