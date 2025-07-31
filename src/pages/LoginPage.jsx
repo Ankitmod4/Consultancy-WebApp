@@ -6,7 +6,6 @@ import { ArrowLeft } from "../components/icons";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-
   return (
     <motion.div
       className="bg-gray-50 min-h-screen flex flex-col items-center justify-start pt-20 px-4 sm:px-6 lg:px-8"
