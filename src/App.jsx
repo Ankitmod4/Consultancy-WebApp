@@ -306,7 +306,7 @@ const ExpertListPage = () => {
             <div className="text-center sm:text-right">
                  <p className="text-2xl font-bold text-green-600">₹{expert.fee}</p>
                  <p className="text-xs text-gray-500">per session</p>
-                 <Link to={`/profile/${expert.id}`} className="block mt-2 bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition duration-300 whitespace-nowrap">View Profile</Link>
+                 <Link to={`/profile/${expert.id}`} className="block mt-2 bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition duration-300 whitespace-nowrap" onClick={()=>scroll(0,0)}>View Profile</Link>
             </div>
         </div>
     );
