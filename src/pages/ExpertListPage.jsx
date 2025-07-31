@@ -143,12 +143,15 @@ const ExpertListPage = () => {
       }}
 
       whileHover={{
+  scale: 1.05,
+  boxShadow: '0px 15px 30px rgba(0,0,0,0.2)',
+  transition: {
+    type: 'tween',
+    ease: 'easeInOut',
+    duration: 0.25
+  }
+}}
 
-        scale: 1.05,
-
-        boxShadow: '0px 15px 30px rgba(0,0,0,0.2)'
-
-      }}
 
       whileTap={{ scale: 0.98 }}
 
