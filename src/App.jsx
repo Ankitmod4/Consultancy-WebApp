@@ -12,10 +12,12 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import ExpertListPage from './pages/ExpertListPage';
 import ExpertProfilePage from './pages/ExpertProfilePage';
+import ScrollToTop from './ScrollToTop';
 
 export default function App() {
     return (
         <BrowserRouter>
+         <ScrollToTop />
             <div className="bg-white font-sans flex flex-col min-h-screen">
                 <Navbar />
                 <main className="flex-grow">
