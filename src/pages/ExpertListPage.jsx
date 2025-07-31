@@ -297,7 +297,7 @@ const ExpertListPage = () => {
 
         <section className="bg-gray-50 py-20 min-h-screen pt-28">
 
-            <div className="container mx-auto px-6">
+            <motion.div className="container mx-auto px-6">
 
                 <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-blue-600 font-semibold mb-6 hover:underline">
 
@@ -371,7 +371,7 @@ const ExpertListPage = () => {
                         )}
                     </div>
                 </main>
-            </div>
+            </motion.div>
             {isFilterOpen && <FilterModal onClose={() => setIsFilterOpen(false)} />}
         </section>
     );
