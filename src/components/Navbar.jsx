@@ -26,9 +26,8 @@ const Navbar = () => {
             {isOpen && (
                 <div className="md:hidden bg-white">
                     <Link to="/" onClick={() => setIsOpen(false)} className="block py-2 px-6 text-sm text-gray-600 hover:bg-gray-100">Home</Link>
-                    <a href="/#experts" onClick={() => setIsOpen(false)} className="block py-2 px-6 text-sm text-gray-600 hover:bg-gray-100">Find an Expert</a>
                     <Link to="/login" onClick={() => setIsOpen(false)} className="block py-2 px-6 text-sm text-gray-600 hover:bg-gray-100">Login</Link>
-                    <Link to="/signup" onClick={() => setIsOpen(false)} className="block py-3 px-6 text-sm text-white bg-blue-600 hover:bg-blue-700">Sign Up</Link>
+                    <Link to="/signup" onClick={() => setIsOpen(false)} className="block py-3 px-6 text-sm text-gray-600 hover:bg-gray-100">Sign Up</Link>
                 </div>
             )}
         </nav>
