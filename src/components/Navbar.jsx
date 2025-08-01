@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <nav className="bg-white shadow-md fixed w-full z-30 top-0">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <Link to="/" className="text-2xl font-bold text-gray-800">ExpertConnect</Link>
+                <Link to="/"  className="text-2xl font-bold text-gray-800"  onClick={()=>scrollTo(0,0)}>ExpertConnect</Link>
                 <div className="hidden md:flex items-center space-x-6">
                     <Link to="/" className="text-gray-600 hover:text-blue-600" onClick={()=>scrollTo(0,0)}>Home</Link>
                     <a href="/#experts" className="text-gray-600 hover:text-blue-600">Find an Expert</a>
