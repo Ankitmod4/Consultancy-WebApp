@@ -12,9 +12,7 @@ const Navbar = () => {
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 <Link to="/"  className="text-2xl font-bold text-gray-800"  onClick={()=>scrollTo(0,0)}>ExpertConnect</Link>
                 <div className="hidden md:flex items-center space-x-6">
-                    <Link to="/" className="text-gray-600 hover:text-blue-600" onClick={()=>scrollTo(0,0)}>Home</Link>
-                    <a href="/#experts" className="text-gray-600 hover:text-blue-600">Find an Expert</a>
-                </div>
+                    <Link to="/" className="text-gray-600 hover:text-blue-600" onClick={()=>scrollTo(0,0)}>Home</Link>                </div>
                 <div className="hidden md:flex items-center space-x-4">
                     <Link to="/login" className="text-gray-600 hover:text-blue-600">Login</Link>
                     <Link to="/signup" className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">Sign Up</Link>
